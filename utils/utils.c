@@ -3,14 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juhagon <juhagon@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: juhagon <juhagon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 10:25:31 by juhagon           #+#    #+#             */
-/*   Updated: 2022/01/24 10:26:25 by juhagon          ###   ########.fr       */
+/*   Updated: 2022/09/20 12:26:53 by juhagon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../philo.h"
+#include "../philo.h"
+
+long long int gettime()
+{
+	long long int		seconds;
+	long long int		micro;
+	struct timeval 		test;
+	gettimeofday(&test, NULL);
+
+	seconds = test.tv_sec * 1000LL;
+	micro = test.tv_usec / 1000;
+
+	return(seconds + micro);
+}
 
 long long int	ft_atoi(const char *s)
 {
